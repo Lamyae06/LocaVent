@@ -1,0 +1,8 @@
+/* Footer général */
+.footer {
+  background-color: #00274D; /* Bleu foncé */
+  color: #FFFFFF; /* Texte en blanc */
+  padding: 15px 0; /* Plus d'espace pour un footer plus aéré */
+  font-family: 'Arial', sans-serif;
+ 
+}
