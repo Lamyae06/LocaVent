@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of products">
+        <div class="card text-center shadow-sm">
+          <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="font-weight-bold">{{ product.price }} €</p>
+            <button class="btn btn-primary">Réserver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

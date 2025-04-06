@@ -21,11 +21,19 @@ import { RouterModule } from '@angular/router';
                 <i class="bi bi-box-seam" style="color: #F5A623;"></i> Produits
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/categories" style="color: #00274D;">
+
+            <!-- Catégories avec sous-menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #00274D;">
                 <i class="bi bi-list" style="color: #F5A623;"></i> Catégories
               </a>
+              <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                <li><a class="dropdown-item" routerLink="/categories/voitures">🚗 Voitures</a></li>
+                <li><a class="dropdown-item" routerLink="/categories/scooters">🛵 Scooters</a></li>
+                <li><a class="dropdown-item" routerLink="/categories/trottinettes">🛴 Trottinettes</a></li>
+              </ul>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" routerLink="/contact" style="color: #00274D;">
                 <i class="bi bi-envelope" style="color: #F5A623;"></i> Contacts
