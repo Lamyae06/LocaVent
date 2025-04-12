@@ -1,20 +1,41 @@
-<<<<<<< HEAD
 
-=======
-<div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4" *ngFor="let product of products">
-        <div class="card text-center shadow-sm">
-          <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
-            <p class="font-weight-bold">{{ product.price }} €</p>
-            <button class="btn btn-primary">Réserver</button>
-          </div>
+<div class="container my-5">
+  <h2 class="mb-3">🚗 Produits à louer</h2>
+  <div class="scroll-container">
+    <ng-container *ngFor="let product of products">
+      <div class="product-card" *ngIf="product.type === 'location'">
+        <img 
+          [src]="'http://localhost:8000/storage/' + product.image" 
+          alt="{{ product.nom }}" 
+          class="product-img" 
+          [ngStyle]="{'object-fit': 'contain', 'width': '100%', 'height': '200px'}">
+        <div class="info">
+          <h5>{{ product.nom }}</h5>
+          <p>{{ product.description }}</p>
+          <p class="price">{{ product.prix }} €/j</p>
+          <button class="btn btn-primary" (click)="goToProductDetails(product.id)">Réserver</button>
+
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
-  
->>>>>>> 2f9cb7b2533bd00f6ef6ef5c107994ae250201f6
+
+  <h2 class="mt-5 mb-3">🛒 Produits à vendre</h2>
+  <div class="scroll-container">
+    <ng-container *ngFor="let product of products">
+      <div class="product-card" *ngIf="product.type === 'vente'">
+        <img 
+          [src]="'http://localhost:8000/storage/' + product.image" 
+          alt="{{ product.nom }}" 
+          class="product-img" 
+          [ngStyle]="{'object-fit': 'contain', 'width': '100%', 'height': '200px'}">      
+        <div class="info">
+          <h5>{{ product.nom }}</h5>
+          <p>{{ product.description }}</p>
+          <p class="price">{{ product.prix }} €</p>
+          <button class="btn btn-success" (click)="goToProductDetails(product.id)">Acheter</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
